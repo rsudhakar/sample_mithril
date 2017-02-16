@@ -1,0 +1,29 @@
+.container {
+  border: 1px solid grey;
+  box-sizing: border-box;
+  width: 300px;
+  margin: auto;
+}
+
+.container .header {
+  padding: 20px;
+  text-align: center;
+}
+
+.container .items {
+  padding: 30px;
+  background-color: #EEEEEE;
+}
+
+.container .items .item {
+  margin: 10px 0;
+}
+
+.container .summary {
+  padding: 20px;
+  text-align: right;
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  background-color: #333333;
+  color: white;
+}
