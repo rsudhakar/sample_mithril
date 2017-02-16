@@ -3,11 +3,8 @@ var externalData = require("../models/cart")
 var itemView = require("./item-view")
 
 module.exports = {
-  controller: function() {
-    // This is where the external calls are made for fetching the data
-    return externalData;
-  },
-  view: function(data) {
+  view: function() {
+    let data = externalData
     return <div class="container">
       <div class="header">My Cart ({data.items.length} items)</div>
       <div class="items">

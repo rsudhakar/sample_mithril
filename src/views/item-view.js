@@ -1,26 +1,18 @@
 var m = require("mithril")
 
 module.exports = {
-  controller: function(data) {
-    return {
-      data: data,
-      render: data ? true : false
-    }
-  },
-  /*checkValid:function(data){
-    if(!data){
-      return {};
-    }
-    //further cases for individual keys
-    else{
-      return data;
-    }
-  }*/
-  view: function(viewModel) {
-    // return <div class="item"><b>{data.name}</b> : {data.cost}/-</div>
+  data: {},
 
-    return  viewModel.render ? m(".item",[
-      m("b", viewModel.data.name), ` : ${viewModel.data.cost1}/-`
-    ]) : ''
+  view: function(vnode) {
+    vnode.state.data = vnode.attrs
+    return (
+      <div class="item" onclick={this.updateIt.bind(this)}>
+        <b>{this.data.name}</b> : {this.data.cost}/-
+      </div>
+    )
+  },
+
+  updateIt: function () {
+    this.data.cost = this.data.cost + 100
   }
 }
